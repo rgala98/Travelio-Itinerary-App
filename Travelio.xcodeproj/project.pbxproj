@@ -13,6 +13,7 @@
 		2F3DCA7E259F0F6B004B5804 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F3DCA7C259F0F6B004B5804 /* LaunchScreen.storyboard */; };
 		2F3DCA8A259F3681004B5804 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DCA89259F3681004B5804 /* TripModel.swift */; };
 		2F3DCA8E259F368E004B5804 /* TripFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DCA8D259F368E004B5804 /* TripFunctions.swift */; };
+		2F3DCA91259F3904004B5804 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DCA90259F3904004B5804 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2F3DCA7F259F0F6B004B5804 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F3DCA89259F3681004B5804 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		2F3DCA8D259F368E004B5804 /* TripFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFunctions.swift; sourceTree = "<group>"; };
+		2F3DCA90259F3904004B5804 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				2F3DCA88259F365E004B5804 /* Trip */,
+				2F3DCA90259F3904004B5804 /* Data.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F3DCA72259F0F67004B5804 /* AppDelegate.swift in Sources */,
+				2F3DCA91259F3904004B5804 /* Data.swift in Sources */,
 				2F3DCA74259F0F67004B5804 /* SceneDelegate.swift in Sources */,
 				2F3DCA8E259F368E004B5804 /* TripFunctions.swift in Sources */,
 				2F3DCA8A259F3681004B5804 /* TripModel.swift in Sources */,
