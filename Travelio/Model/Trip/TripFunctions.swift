@@ -18,6 +18,7 @@ class TripFunctions {
             Data.tripModels.append(TripModel(title: "Dubai Trip"))
             Data.tripModels.append(TripModel(title: "Shimla"))
             Data.tripModels.append(TripModel(title: "Trip to Bali"))
+            //new
         }
     }
     
