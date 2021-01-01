@@ -11,6 +11,8 @@
 		2F3DCA74259F0F67004B5804 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DCA73259F0F67004B5804 /* SceneDelegate.swift */; };
 		2F3DCA7B259F0F6B004B5804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F3DCA7A259F0F6B004B5804 /* Assets.xcassets */; };
 		2F3DCA7E259F0F6B004B5804 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F3DCA7C259F0F6B004B5804 /* LaunchScreen.storyboard */; };
+		2F3DCA8A259F3681004B5804 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DCA89259F3681004B5804 /* TripModel.swift */; };
+		2F3DCA8E259F368E004B5804 /* TripFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DCA8D259F368E004B5804 /* TripFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		2F3DCA7A259F0F6B004B5804 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F3DCA7D259F0F6B004B5804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F3DCA7F259F0F6B004B5804 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F3DCA89259F3681004B5804 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
+		2F3DCA8D259F368E004B5804 /* TripFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 		2F3DCA70259F0F67004B5804 /* Travelio */ = {
 			isa = PBXGroup;
 			children = (
+				2F3DCA87259F3655004B5804 /* Model */,
 				2F3DCA71259F0F67004B5804 /* AppDelegate.swift */,
 				2F3DCA73259F0F67004B5804 /* SceneDelegate.swift */,
 				2F3DCA7A259F0F6B004B5804 /* Assets.xcassets */,
@@ -59,6 +64,23 @@
 				2F3DCA7F259F0F6B004B5804 /* Info.plist */,
 			);
 			path = Travelio;
+			sourceTree = "<group>";
+		};
+		2F3DCA87259F3655004B5804 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F3DCA88259F365E004B5804 /* Trip */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2F3DCA88259F365E004B5804 /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				2F3DCA89259F3681004B5804 /* TripModel.swift */,
+				2F3DCA8D259F368E004B5804 /* TripFunctions.swift */,
+			);
+			path = Trip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +154,8 @@
 			files = (
 				2F3DCA72259F0F67004B5804 /* AppDelegate.swift in Sources */,
 				2F3DCA74259F0F67004B5804 /* SceneDelegate.swift in Sources */,
+				2F3DCA8E259F368E004B5804 /* TripFunctions.swift in Sources */,
+				2F3DCA8A259F3681004B5804 /* TripModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
