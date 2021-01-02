@@ -20,6 +20,8 @@ class TripsViewController: UIViewController  {
         tableView.dataSource = self
         tableView.delegate = self
         
+        tableView.tableFooterView = UIView() 
+        
         TripFunctions.readTrips { [weak self] in
             self?.tableView.reloadData()
             
@@ -28,6 +30,15 @@ class TripsViewController: UIViewController  {
         view.backgroundColor = Theme.backgroundColor
         
         addTripButton.createActionFloatingButton()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAddTripSegue" {
+            let popup = segue.destination as! AddTripViewController
+            popup.doneSaving = { [weak self] in
+                self?.tableView.reloadData()
+            }
+        }
     }
     
 }
