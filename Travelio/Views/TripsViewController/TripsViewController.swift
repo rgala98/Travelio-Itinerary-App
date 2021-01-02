@@ -7,22 +7,35 @@
 
 import UIKit
 
-class TripsViewController: UIViewController, UITableViewDataSource {
+class TripsViewController: UIViewController  {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var addTripButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
+        tableView.delegate = self
         
         TripFunctions.readTrips { [weak self] in
             self?.tableView.reloadData()
             
         }
+        
+        view.backgroundColor = Theme.backgroundColor
+        
+        addTripButton.createActionFloatingButton()
     }
+    
+}
     
     
     // MARK: TableView Delegates
+
+extension TripsViewController:UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Data.tripModels.count
@@ -30,15 +43,16 @@ class TripsViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: "tableCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell") as! TripsTableViewCell
         
-        if cell == nil{
-            cell = UITableViewCell(style: .default, reuseIdentifier: "tableCell")
-        }
-         
-        cell!.textLabel?.text = Data.tripModels[indexPath.row].title
         
-        return cell!
+        cell.setup(tripModel: Data.tripModels[indexPath.row])
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
     }
     
 
