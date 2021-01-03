@@ -49,7 +49,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmk-4u-l68" customClass="ActionUIButton" customModule="Travelio" customModuleProvider="target">
                                         <rect key="frame" x="170" y="138" width="100" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                        <state key="normal" title="Add Trip"/>
+                                        <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="addTrip:" destination="Gbu-wI-En4" eventType="touchUpInside" id="YvA-WO-jfB"/>
                                         </connections>
