@@ -47,6 +47,7 @@ class AddTripViewController: UIViewController {
             
             tripTextField.insertText(trip.title)
             tripImageView.image = trip.image
+            titleLabel.text = "Edit Trip"
         }
     }
     
@@ -87,6 +88,7 @@ class AddTripViewController: UIViewController {
     fileprivate func presentPhotoPickerController() {
         DispatchQueue.main.async {
             let imagePickerController = UIImagePickerController()
+            imagePickerController.allowsEditing = true
             imagePickerController.delegate = self
             imagePickerController.sourceType = .photoLibrary
             self.present(imagePickerController, animated: true,completion: nil)
@@ -148,9 +150,10 @@ extension AddTripViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if let image = info[.originalImage] as? UIImage {
+        if let image = info[.editedImage] as? UIImage {
             self.tripImageView.image = image
-            
+        } else if let image = info[.originalImage] as? UIImage {
+            self.tripImageView.image = image
         }
         
         dismiss(animated: true, completion: nil)

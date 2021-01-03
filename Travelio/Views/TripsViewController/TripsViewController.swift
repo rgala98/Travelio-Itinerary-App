@@ -12,6 +12,10 @@ class TripsViewController: UIViewController  {
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var addTripButton: UIButton!
+    @IBOutlet var helpView: UIVisualEffectView!
+    
+    var seenHelpView = "seenHelpView"
+
     
     var tripIndexToEdit: Int?
     
@@ -24,10 +28,19 @@ class TripsViewController: UIViewController  {
         
         tableView.tableFooterView = UIView() 
         
-        TripFunctions.readTrips { [weak self] in
-            self?.tableView.reloadData()
+        TripFunctions.readTrips { [unowned self] in
+            self .tableView.reloadData()
+            
+            if Data.tripModels.count > 0{
+                if !UserDefaults.standard.bool(forKey: self.seenHelpView){
+                    self.view.addSubview(self.helpView)
+                    self.helpView.frame = view.frame
+                }
+            }
             
         }
+        
+       
         
         view.backgroundColor = Theme.backgroundColor
         
@@ -41,8 +54,26 @@ class TripsViewController: UIViewController  {
             popup.doneSaving = { [weak self] in
                 self?.tableView.reloadData()
             }
+            
+            tripIndexToEdit = nil
         }
     }
+    
+    
+    
+    @IBAction func closeHelpView(_ sender: ActionUIButton) {
+        
+        UIView.animate(withDuration: 0.7) {
+            self.helpView.alpha = 0
+        } completion: { (success) in
+            self.helpView.removeFromSuperview()
+            UserDefaults.standard.set(true, forKey: self.seenHelpView)
+        }
+
+        
+        
+    }
+    
     
 }
     

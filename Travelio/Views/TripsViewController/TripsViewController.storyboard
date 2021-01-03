@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E3Q-xe-RXe">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E3Q-xe-RXe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="1012"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -29,17 +29,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CvC-Am-L36">
-                                                    <rect key="frame" x="20" y="11" width="374" height="138"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CvC-Am-L36">
+                                                    <rect key="frame" x="16" y="8" width="382" height="144"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Xy-UR-Zts">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="138"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="144"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtq-05-5kR">
-                                                            <rect key="frame" x="8" y="36" width="358" height="66"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <rect key="frame" x="8" y="36" width="366" height="66"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="42"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -49,6 +48,12 @@
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="CvC-Am-L36" firstAttribute="top" secondItem="rHx-vx-3cd" secondAttribute="top" constant="8" id="7G5-Z7-vgg"/>
+                                                <constraint firstAttribute="trailing" secondItem="CvC-Am-L36" secondAttribute="trailing" constant="16" id="NLb-mZ-BM1"/>
+                                                <constraint firstAttribute="bottom" secondItem="CvC-Am-L36" secondAttribute="bottom" constant="8" id="xHy-0a-BYb"/>
+                                                <constraint firstItem="CvC-Am-L36" firstAttribute="leading" secondItem="rHx-vx-3cd" secondAttribute="leading" constant="16" id="xvD-vv-maH"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
@@ -70,15 +75,74 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6U3-ue-p7x"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="E3Q-xe-RXe" secondAttribute="bottom" id="DW8-d9-NlB"/>
+                            <constraint firstItem="E3Q-xe-RXe" firstAttribute="top" secondItem="6U3-ue-p7x" secondAttribute="top" id="Qa0-d3-JF4"/>
+                            <constraint firstAttribute="trailing" secondItem="E3Q-xe-RXe" secondAttribute="trailing" id="XSn-xh-1nR"/>
+                            <constraint firstItem="E3Q-xe-RXe" firstAttribute="leading" secondItem="6U3-ue-p7x" secondAttribute="leading" id="pbb-nk-W9S"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="addTripButton" destination="rKT-Ff-Rfm" id="D2F-6O-N7R"/>
+                        <outlet property="helpView" destination="tSJ-E3-SR9" id="8rc-Zo-w8v"/>
                         <outlet property="tableView" destination="E3Q-xe-RXe" id="cGL-LR-dCk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBM-OP-mpn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" id="tSJ-E3-SR9">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rQk-oS-eeJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wiY-eH-XDw">
+                                <rect key="frame" x="18" y="56" width="378" height="392.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe rows for more functions!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ru5-FL-rvX">
+                                        <rect key="frame" x="0.0" y="0.0" width="378" height="76.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editSwipeAction" translatesAutoresizingMaskIntoConstraints="NO" id="7Xb-kU-pDJ">
+                                        <rect key="frame" x="0.0" y="84.5" width="378" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="C3V-iQ-XM9"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deleteSwipeAction" translatesAutoresizingMaskIntoConstraints="NO" id="a4V-Ko-bwM">
+                                        <rect key="frame" x="0.0" y="242.5" width="378" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="ZY2-Eh-hEd"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvf-tG-ts7" customClass="ActionUIButton" customModule="Travelio" customModuleProvider="target">
+                                <rect key="frame" x="18" y="796" width="378" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="yQO-YW-6I1"/>
+                                </constraints>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeHelpView:" destination="bDt-Fe-exb" eventType="touchUpInside" id="hRL-v5-myJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="wiY-eH-XDw" firstAttribute="leading" secondItem="rQk-oS-eeJ" secondAttribute="leading" constant="18" id="5mf-qM-IDo"/>
+                            <constraint firstAttribute="trailing" secondItem="wiY-eH-XDw" secondAttribute="trailing" constant="18" id="8lD-wS-2Ri"/>
+                            <constraint firstAttribute="bottom" secondItem="mvf-tG-ts7" secondAttribute="bottom" constant="56" id="VZ1-84-Xnc"/>
+                            <constraint firstAttribute="trailing" secondItem="mvf-tG-ts7" secondAttribute="trailing" constant="18" id="id8-Zq-dDI"/>
+                            <constraint firstItem="wiY-eH-XDw" firstAttribute="top" secondItem="rQk-oS-eeJ" secondAttribute="top" constant="56" id="kNy-nB-Xjo"/>
+                            <constraint firstItem="mvf-tG-ts7" firstAttribute="leading" secondItem="rQk-oS-eeJ" secondAttribute="leading" constant="18" id="kw4-gn-Z8V"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
             </objects>
-            <point key="canvasLocation" x="-220.28985507246378" y="6.6964285714285712"/>
+            <point key="canvasLocation" x="-221.59999999999999" y="5.8470764617691158"/>
         </scene>
         <!--AddTripViewController-->
         <scene sceneID="8sB-Bd-S9W">
@@ -91,6 +155,8 @@
     </scenes>
     <resources>
         <image name="AddTripIcon" width="56" height="56"/>
+        <image name="deleteSwipeAction" width="828" height="327"/>
+        <image name="editSwipeAction" width="828" height="322"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
