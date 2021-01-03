@@ -24,10 +24,10 @@ class AddTripViewController: UIViewController {
     var doneSaving: (() -> ())?
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         titleLabel.font = UIFont(name: Theme.mainFontName, size: 24.0)
@@ -67,7 +67,7 @@ class AddTripViewController: UIViewController {
             doneSaving()
         }
         dismiss(animated: true)
-
+        
     }
     
     
@@ -81,49 +81,49 @@ class AddTripViewController: UIViewController {
     }
     
     @IBAction func addImage(_ sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-            
-            PHPhotoLibrary.requestAuthorization { (status) in
-                switch status {
-                case .authorized:
+        
+        
+        PHPhotoLibrary.requestAuthorization { (status) in
+            switch status {
+            case .authorized:
+                self.presentPhotoPickerController()
+                break
+            case .notDetermined:
+                if status == PHAuthorizationStatus.authorized{
                     self.presentPhotoPickerController()
-                    break
-                case .notDetermined:
-                    if status == PHAuthorizationStatus.authorized{
-                        self.presentPhotoPickerController()
-                    }
-                    break
-                case .restricted:
-                    let alert = UIAlertController(title: "Photo Library Restricted", message: "Access to the photo library is restricted and cannot be accessed at this time.", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true, completion: nil)
-                case .denied:
-                    let alert = UIAlertController(title: "Photo Library Access Denied", message: "Access to the photo library was previously denied. Please go to Settings if you wish to change this", preferredStyle: .alert)
-                    let settingsAction = UIAlertAction(title: "Go to Settings", style: .default){(action) in
-                        DispatchQueue.main.async {
-                            let url = URL(string: UIApplication.openSettingsURLString)!
-                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                        }
-                    }
-                    let cancelAction =  UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                    alert.addAction(settingsAction)
-                    alert.addAction(cancelAction)
-                    self.present(alert, animated: true, completion: nil)
-    
-                case .limited:
-                    let alert = UIAlertController(title: "Photo Library Restricted", message: "Access to the photo library is restricted and cannot be accessed at this time.", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true, completion: nil)
-                @unknown default:
-                    break
                 }
+                break
+            case .restricted:
+                let alert = UIAlertController(title: "Photo Library Restricted", message: "Access to the photo library is restricted and cannot be accessed at this time.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
+            case .denied:
+                let alert = UIAlertController(title: "Photo Library Access Denied", message: "Access to the photo library was previously denied. Please go to Settings if you wish to change this", preferredStyle: .alert)
+                let settingsAction = UIAlertAction(title: "Go to Settings", style: .default){(action) in
+                    DispatchQueue.main.async {
+                        let url = URL(string: UIApplication.openSettingsURLString)!
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                }
+                let cancelAction =  UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                alert.addAction(settingsAction)
+                alert.addAction(cancelAction)
+                self.present(alert, animated: true, completion: nil)
                 
-                
+            case .limited:
+                let alert = UIAlertController(title: "Photo Library Restricted", message: "Access to the photo library is restricted and cannot be accessed at this time.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
+            @unknown default:
+                break
             }
             
+            
         }
+        
+        
     }
     
 }
@@ -131,7 +131,7 @@ class AddTripViewController: UIViewController {
 
 extension AddTripViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
@@ -139,9 +139,6 @@ extension AddTripViewController: UIImagePickerControllerDelegate, UINavigationCo
             self.tripImageView.image = image
             
         }
-        
-        
-        
         
         dismiss(animated: true, completion: nil)
         
