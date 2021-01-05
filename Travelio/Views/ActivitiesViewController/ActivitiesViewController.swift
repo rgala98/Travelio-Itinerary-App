@@ -11,9 +11,11 @@ class ActivitiesViewController: UIViewController {
     
     
     var tripId: UUID!
+    var tripTitle = ""
     var tripModel: TripModel?
     var sectionHeaderHeight: CGFloat = 0.0
     
+    @IBOutlet weak var addButton: ActionUIButton!
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
@@ -22,6 +24,8 @@ class ActivitiesViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        title = tripTitle
+        addButton.createActionFloatingButton()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -32,14 +36,45 @@ class ActivitiesViewController: UIViewController {
             self.tripModel = model
             
             guard let model = model else {return}
-            self.title = model.title
+            
             self.backgroundImageView.image = model.image
             
             self.tableView.reloadData()
         }
         
-        sectionHeaderHeight = tableView.dequeueReusableCell(withIdentifier: "headerCell")?.contentView.bounds.height ?? 0
+        sectionHeaderHeight = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier)?.contentView.bounds.height ?? 0
     }
+    
+    @IBAction func addAction(_ sender: ActionUIButton) {
+        let alert = UIAlertController(title: "Which one would you like to add?", message: nil, preferredStyle: .actionSheet)
+        
+        let dayAction = UIAlertAction(title: "Day", style: .default, handler: handleAddDay)
+        
+        let activityAction = UIAlertAction(title: "Activity", style: .default) { (action) in
+            print("Activity Action")
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(dayAction)
+        alert.addAction(activityAction)
+        alert.addAction(cancel)
+        
+        // To add the action sheet to iPads
+        alert.popoverPresentationController?.sourceView = sender
+        // To properly point the arrow from the button
+        alert.popoverPresentationController?.sourceRect = CGRect(x: 0, y: -4, width: sender.bounds.width, height: 0)
+        
+        alert.view.tintColor = Theme.tintColor
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func handleAddDay(action: UIAlertAction){
+        print("Day Action")
+    }
+    
     
 }
 
@@ -62,7 +97,7 @@ extension ActivitiesViewController: UITableViewDataSource, UITableViewDelegate{
         
         let dayModel = tripModel?.dayModels[section]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! HeaderTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier ) as! HeaderTableViewCell
         
         cell.setup(model: dayModel!)
         
@@ -77,11 +112,11 @@ extension ActivitiesViewController: UITableViewDataSource, UITableViewDelegate{
         
         let model = tripModel?.dayModels[indexPath.section].activityModels[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell") as! ActivityTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ActivityTableViewCell.identifier) as! ActivityTableViewCell
         
         cell.setup(model: model!)
         return cell
     }
     
-    
+
 }

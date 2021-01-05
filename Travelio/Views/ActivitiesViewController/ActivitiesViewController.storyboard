@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="headerCell" rowHeight="44" id="r7w-7q-YVS" customClass="HeaderTableViewCell" customModule="Travelio" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HeaderTableViewCell" rowHeight="44" id="r7w-7q-YVS" customClass="HeaderTableViewCell" customModule="Travelio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r7w-7q-YVS" id="PbU-i1-oVY">
@@ -63,7 +63,7 @@
                                             <outlet property="titleLabel" destination="VFO-GJ-TW8" id="tkn-dY-gCT"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="activityCell" rowHeight="90" id="1Ou-FG-Kcr" customClass="ActivityTableViewCell" customModule="Travelio" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityTableViewCell" rowHeight="90" id="1Ou-FG-Kcr" customClass="ActivityTableViewCell" customModule="Travelio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Ou-FG-Kcr" id="1z2-eH-fIA">
@@ -129,6 +129,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMQ-7M-e8I" customClass="ActionUIButton" customModule="Travelio" customModuleProvider="target">
+                                <rect key="frame" x="322" y="790" width="72" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="BT5-4k-X8H"/>
+                                    <constraint firstAttribute="height" constant="72" id="x6D-Po-yP4"/>
+                                </constraints>
+                                <state key="normal" image="AddTripIcon"/>
+                                <connections>
+                                    <action selector="addAction:" destination="KE0-dr-MSK" eventType="touchUpInside" id="u4z-Sc-T6o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jl8-BI-oJy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -139,13 +150,16 @@
                             <constraint firstItem="eBj-jo-B5T" firstAttribute="top" secondItem="Adn-61-a6Z" secondAttribute="top" id="Hfw-pG-Mj5"/>
                             <constraint firstAttribute="bottom" secondItem="eBj-jo-B5T" secondAttribute="bottom" id="WDl-XR-XUJ"/>
                             <constraint firstAttribute="bottom" secondItem="BuO-md-pVc" secondAttribute="bottom" id="Z6c-df-3zD"/>
+                            <constraint firstItem="jl8-BI-oJy" firstAttribute="bottom" secondItem="fMQ-7M-e8I" secondAttribute="bottom" id="fFK-Ea-Xaw"/>
                             <constraint firstAttribute="trailing" secondItem="eBj-jo-B5T" secondAttribute="trailing" id="gjh-jN-8Lg"/>
                             <constraint firstItem="jl8-BI-oJy" firstAttribute="trailing" secondItem="BuO-md-pVc" secondAttribute="trailing" id="mLy-MW-HGT"/>
                             <constraint firstItem="BuO-md-pVc" firstAttribute="top" secondItem="jl8-BI-oJy" secondAttribute="top" id="oIc-Aq-GNL"/>
+                            <constraint firstItem="jl8-BI-oJy" firstAttribute="trailing" secondItem="fMQ-7M-e8I" secondAttribute="trailing" constant="20" id="xWB-AR-fNc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z45-bM-y86"/>
                     <connections>
+                        <outlet property="addButton" destination="fMQ-7M-e8I" id="GOK-ao-AUk"/>
                         <outlet property="backgroundImageView" destination="eBj-jo-B5T" id="mIz-U5-0DM"/>
                         <outlet property="tableView" destination="BuO-md-pVc" id="YB1-l2-7fU"/>
                     </connections>
@@ -157,6 +171,7 @@
     </scenes>
     <color key="tintColor" name="Tint"/>
     <resources>
+        <image name="AddTripIcon" width="56" height="56"/>
         <namedColor name="Accent">
             <color red="0.20392156862745098" green="0.28627450980392155" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

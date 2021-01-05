@@ -37,6 +37,7 @@
 		2F3DCAAE25A05ADE004B5804 /* UIViewExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DCAAD25A05ADE004B5804 /* UIViewExtentions.swift */; };
 		2F3DCAB325A05C3B004B5804 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DCAB225A05C3B004B5804 /* Theme.swift */; };
 		2F3DCAB725A05CF9004B5804 /* FugazOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F3DCAB625A05CF9004B5804 /* FugazOne-Regular.ttf */; };
+		2F7B147325A47E5F00A45819 /* UITableViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B147225A47E5F00A45819 /* UITableViewCellExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		2F3DCAAD25A05ADE004B5804 /* UIViewExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtentions.swift; sourceTree = "<group>"; };
 		2F3DCAB225A05C3B004B5804 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		2F3DCAB625A05CF9004B5804 /* FugazOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FugazOne-Regular.ttf"; sourceTree = "<group>"; };
+		2F7B147225A47E5F00A45819 /* UITableViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 			children = (
 				2F3DCAAD25A05ADE004B5804 /* UIViewExtentions.swift */,
 				2F02852625A07E2B007E055E /* UIButtonExtensions.swift */,
+				2F7B147225A47E5F00A45819 /* UITableViewCellExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				2F02852E25A080F1007E055E /* AddTripViewController.swift in Sources */,
 				2F02854C25A207BC007E055E /* MockData.swift in Sources */,
 				2F02854625A2059F007E055E /* ActivityModel.swift in Sources */,
+				2F7B147325A47E5F00A45819 /* UITableViewCellExtensions.swift in Sources */,
 				2F3DCA8E259F368E004B5804 /* TripFunctions.swift in Sources */,
 				2F3DCAA525A045B6004B5804 /* TripsTableViewCell.swift in Sources */,
 				2F3DCA8A259F3681004B5804 /* TripModel.swift in Sources */,
