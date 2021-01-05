@@ -13,6 +13,17 @@
 		2F02852E25A080F1007E055E /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F02852D25A080F1007E055E /* AddTripViewController.swift */; };
 		2F02853325A087C8007E055E /* PopupUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F02853225A087C8007E055E /* PopupUIView.swift */; };
 		2F02853725A0898F007E055E /* ActionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F02853625A0898F007E055E /* ActionUIButton.swift */; };
+		2F02853B25A20295007E055E /* ActivitiesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F02853A25A20294007E055E /* ActivitiesViewController.storyboard */; };
+		2F02853E25A202B1007E055E /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F02853D25A202B1007E055E /* ActivitiesViewController.swift */; };
+		2F02854325A2054D007E055E /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F02854225A2054D007E055E /* DayModel.swift */; };
+		2F02854625A2059F007E055E /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F02854525A2059F007E055E /* ActivityModel.swift */; };
+		2F02854925A20693007E055E /* ActivityTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F02854825A20693007E055E /* ActivityTypeEnum.swift */; };
+		2F02854C25A207BC007E055E /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F02854B25A207BC007E055E /* MockData.swift */; };
+		2F0FFF7725A4378600AC4748 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FFF7625A4378600AC4748 /* HeaderTableViewCell.swift */; };
+		2F20847A25A44BCD001A719E /* JosefinSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F20847825A44BCD001A719E /* JosefinSans-SemiBold.ttf */; };
+		2F20847B25A44BCD001A719E /* JosefinSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F20847925A44BCD001A719E /* JosefinSans-Regular.ttf */; };
+		2F20847E25A44DFE001A719E /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F20847D25A44DFE001A719E /* ActivityTableViewCell.swift */; };
+		2F20848125A45B91001A719E /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F20848025A45B90001A719E /* JosefinSans-Bold.ttf */; };
 		2F3DCA72259F0F67004B5804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DCA71259F0F67004B5804 /* AppDelegate.swift */; };
 		2F3DCA74259F0F67004B5804 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DCA73259F0F67004B5804 /* SceneDelegate.swift */; };
 		2F3DCA7B259F0F6B004B5804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F3DCA7A259F0F6B004B5804 /* Assets.xcassets */; };
@@ -35,6 +46,17 @@
 		2F02852D25A080F1007E055E /* AddTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
 		2F02853225A087C8007E055E /* PopupUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupUIView.swift; sourceTree = "<group>"; };
 		2F02853625A0898F007E055E /* ActionUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionUIButton.swift; sourceTree = "<group>"; };
+		2F02853A25A20294007E055E /* ActivitiesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivitiesViewController.storyboard; sourceTree = "<group>"; };
+		2F02853D25A202B1007E055E /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
+		2F02854225A2054D007E055E /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
+		2F02854525A2059F007E055E /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		2F02854825A20693007E055E /* ActivityTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeEnum.swift; sourceTree = "<group>"; };
+		2F02854B25A207BC007E055E /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		2F0FFF7625A4378600AC4748 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		2F20847825A44BCD001A719E /* JosefinSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		2F20847925A44BCD001A719E /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
+		2F20847D25A44DFE001A719E /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		2F20848025A45B90001A719E /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
 		2F3DCA6E259F0F67004B5804 /* Travelio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travelio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3DCA71259F0F67004B5804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F3DCA73259F0F67004B5804 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +103,34 @@
 			path = CustomControls;
 			sourceTree = "<group>";
 		};
+		2F02853925A20263007E055E /* ActivitiesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2F02853A25A20294007E055E /* ActivitiesViewController.storyboard */,
+				2F02853D25A202B1007E055E /* ActivitiesViewController.swift */,
+				2F0FFF7625A4378600AC4748 /* HeaderTableViewCell.swift */,
+				2F20847D25A44DFE001A719E /* ActivityTableViewCell.swift */,
+			);
+			path = ActivitiesViewController;
+			sourceTree = "<group>";
+		};
+		2F02854025A20533007E055E /* Days */ = {
+			isa = PBXGroup;
+			children = (
+				2F02854225A2054D007E055E /* DayModel.swift */,
+			);
+			path = Days;
+			sourceTree = "<group>";
+		};
+		2F02854125A2053A007E055E /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				2F02854525A2059F007E055E /* ActivityModel.swift */,
+				2F02854825A20693007E055E /* ActivityTypeEnum.swift */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
 		2F3DCA65259F0F67004B5804 = {
 			isa = PBXGroup;
 			children = (
@@ -115,8 +165,11 @@
 		2F3DCA87259F3655004B5804 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2F02854125A2053A007E055E /* Activities */,
+				2F02854025A20533007E055E /* Days */,
 				2F3DCA88259F365E004B5804 /* Trip */,
 				2F3DCA90259F3904004B5804 /* Data.swift */,
+				2F02854B25A207BC007E055E /* MockData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +186,7 @@
 		2F3DCA9325A03507004B5804 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2F02853925A20263007E055E /* ActivitiesViewController */,
 				2F02852C25A080BC007E055E /* AddTripViewContoller */,
 				2F3DCA9425A0350D004B5804 /* TripsViewController */,
 			);
@@ -164,6 +218,9 @@
 				2F02853125A0879C007E055E /* CustomControls */,
 				2F3DCAA725A05900004B5804 /* Extensions */,
 				2F3DCAB625A05CF9004B5804 /* FugazOne-Regular.ttf */,
+				2F20847925A44BCD001A719E /* JosefinSans-Regular.ttf */,
+				2F20847825A44BCD001A719E /* JosefinSans-SemiBold.ttf */,
+				2F20848025A45B90001A719E /* JosefinSans-Bold.ttf */,
 				2F3DCAB225A05C3B004B5804 /* Theme.swift */,
 				2F02852325A072D1007E055E /* Colors.xcassets */,
 			);
@@ -230,9 +287,13 @@
 				2F02852A25A080B6007E055E /* AddTripViewController.storyboard in Resources */,
 				2F02852425A072D1007E055E /* Colors.xcassets in Resources */,
 				2F3DCA7E259F0F6B004B5804 /* LaunchScreen.storyboard in Resources */,
+				2F20847A25A44BCD001A719E /* JosefinSans-SemiBold.ttf in Resources */,
+				2F02853B25A20295007E055E /* ActivitiesViewController.storyboard in Resources */,
 				2F3DCA9625A03539004B5804 /* TripsViewController.storyboard in Resources */,
 				2F3DCAB725A05CF9004B5804 /* FugazOne-Regular.ttf in Resources */,
+				2F20847B25A44BCD001A719E /* JosefinSans-Regular.ttf in Resources */,
 				2F3DCA7B259F0F6B004B5804 /* Assets.xcassets in Resources */,
+				2F20848125A45B91001A719E /* JosefinSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,14 +306,21 @@
 			files = (
 				2F3DCAB325A05C3B004B5804 /* Theme.swift in Sources */,
 				2F3DCAA125A037FB004B5804 /* TripsViewController.swift in Sources */,
+				2F20847E25A44DFE001A719E /* ActivityTableViewCell.swift in Sources */,
+				2F0FFF7725A4378600AC4748 /* HeaderTableViewCell.swift in Sources */,
 				2F3DCA72259F0F67004B5804 /* AppDelegate.swift in Sources */,
+				2F02853E25A202B1007E055E /* ActivitiesViewController.swift in Sources */,
+				2F02854925A20693007E055E /* ActivityTypeEnum.swift in Sources */,
 				2F3DCA91259F3904004B5804 /* Data.swift in Sources */,
 				2F3DCAAE25A05ADE004B5804 /* UIViewExtentions.swift in Sources */,
+				2F02854325A2054D007E055E /* DayModel.swift in Sources */,
 				2F02853325A087C8007E055E /* PopupUIView.swift in Sources */,
 				2F02853725A0898F007E055E /* ActionUIButton.swift in Sources */,
 				2F02852725A07E2B007E055E /* UIButtonExtensions.swift in Sources */,
 				2F3DCA74259F0F67004B5804 /* SceneDelegate.swift in Sources */,
 				2F02852E25A080F1007E055E /* AddTripViewController.swift in Sources */,
+				2F02854C25A207BC007E055E /* MockData.swift in Sources */,
+				2F02854625A2059F007E055E /* ActivityModel.swift in Sources */,
 				2F3DCA8E259F368E004B5804 /* TripFunctions.swift in Sources */,
 				2F3DCAA525A045B6004B5804 /* TripsTableViewCell.swift in Sources */,
 				2F3DCA8A259F3681004B5804 /* TripModel.swift in Sources */,
