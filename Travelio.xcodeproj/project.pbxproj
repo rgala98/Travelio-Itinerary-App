@@ -37,6 +37,9 @@
 		2F3DCAAE25A05ADE004B5804 /* UIViewExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DCAAD25A05ADE004B5804 /* UIViewExtentions.swift */; };
 		2F3DCAB325A05C3B004B5804 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DCAB225A05C3B004B5804 /* Theme.swift */; };
 		2F3DCAB725A05CF9004B5804 /* FugazOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F3DCAB625A05CF9004B5804 /* FugazOne-Regular.ttf */; };
+		2F470E3825AD653A008A9325 /* AddDayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F470E3725AD653A008A9325 /* AddDayViewController.storyboard */; };
+		2F470E3C25AD6571008A9325 /* AddDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F470E3B25AD6571008A9325 /* AddDayViewController.swift */; };
+		2F470E3F25AD6C76008A9325 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F470E3E25AD6C76008A9325 /* UIViewControllerExtensions.swift */; };
 		2F7B147325A47E5F00A45819 /* UITableViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B147225A47E5F00A45819 /* UITableViewCellExtensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +76,9 @@
 		2F3DCAAD25A05ADE004B5804 /* UIViewExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtentions.swift; sourceTree = "<group>"; };
 		2F3DCAB225A05C3B004B5804 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		2F3DCAB625A05CF9004B5804 /* FugazOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FugazOne-Regular.ttf"; sourceTree = "<group>"; };
+		2F470E3725AD653A008A9325 /* AddDayViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddDayViewController.storyboard; sourceTree = "<group>"; };
+		2F470E3B25AD6571008A9325 /* AddDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDayViewController.swift; sourceTree = "<group>"; };
+		2F470E3E25AD6C76008A9325 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		2F7B147225A47E5F00A45819 /* UITableViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,6 +194,7 @@
 		2F3DCA9325A03507004B5804 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2F470E3325AD650B008A9325 /* AddDayViewController */,
 				2F02853925A20263007E055E /* ActivitiesViewController */,
 				2F02852C25A080BC007E055E /* AddTripViewContoller */,
 				2F3DCA9425A0350D004B5804 /* TripsViewController */,
@@ -211,6 +218,7 @@
 				2F3DCAAD25A05ADE004B5804 /* UIViewExtentions.swift */,
 				2F02852625A07E2B007E055E /* UIButtonExtensions.swift */,
 				2F7B147225A47E5F00A45819 /* UITableViewCellExtensions.swift */,
+				2F470E3E25AD6C76008A9325 /* UIViewControllerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -228,6 +236,15 @@
 				2F02852325A072D1007E055E /* Colors.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2F470E3325AD650B008A9325 /* AddDayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2F470E3725AD653A008A9325 /* AddDayViewController.storyboard */,
+				2F470E3B25AD6571008A9325 /* AddDayViewController.swift */,
+			);
+			path = AddDayViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +307,7 @@
 				2F02852A25A080B6007E055E /* AddTripViewController.storyboard in Resources */,
 				2F02852425A072D1007E055E /* Colors.xcassets in Resources */,
 				2F3DCA7E259F0F6B004B5804 /* LaunchScreen.storyboard in Resources */,
+				2F470E3825AD653A008A9325 /* AddDayViewController.storyboard in Resources */,
 				2F20847A25A44BCD001A719E /* JosefinSans-SemiBold.ttf in Resources */,
 				2F02853B25A20295007E055E /* ActivitiesViewController.storyboard in Resources */,
 				2F3DCA9625A03539004B5804 /* TripsViewController.storyboard in Resources */,
@@ -308,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F3DCAB325A05C3B004B5804 /* Theme.swift in Sources */,
+				2F470E3C25AD6571008A9325 /* AddDayViewController.swift in Sources */,
 				2F3DCAA125A037FB004B5804 /* TripsViewController.swift in Sources */,
 				2F20847E25A44DFE001A719E /* ActivityTableViewCell.swift in Sources */,
 				2F0FFF7725A4378600AC4748 /* HeaderTableViewCell.swift in Sources */,
@@ -325,6 +344,7 @@
 				2F02854C25A207BC007E055E /* MockData.swift in Sources */,
 				2F02854625A2059F007E055E /* ActivityModel.swift in Sources */,
 				2F7B147325A47E5F00A45819 /* UITableViewCellExtensions.swift in Sources */,
+				2F470E3F25AD6C76008A9325 /* UIViewControllerExtensions.swift in Sources */,
 				2F3DCA8E259F368E004B5804 /* TripFunctions.swift in Sources */,
 				2F3DCAA525A045B6004B5804 /* TripsTableViewCell.swift in Sources */,
 				2F3DCA8A259F3681004B5804 /* TripModel.swift in Sources */,

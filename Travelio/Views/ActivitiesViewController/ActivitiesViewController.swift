@@ -63,7 +63,7 @@ class ActivitiesViewController: UIViewController {
         // To add the action sheet to iPads
         alert.popoverPresentationController?.sourceView = sender
         // To properly point the arrow from the button
-        alert.popoverPresentationController?.sourceRect = CGRect(x: 0, y: -4, width: sender.bounds.width, height: 0)
+        alert.popoverPresentationController?.sourceRect = CGRect(x: 0, y: -4, width: sender.bounds.width, height: sender.bounds.height)
         
         alert.view.tintColor = Theme.tintColor
         
@@ -72,7 +72,8 @@ class ActivitiesViewController: UIViewController {
     
     
     func handleAddDay(action: UIAlertAction){
-        print("Day Action")
+        let vc  = AddDayViewController.getInstance()
+        present(vc, animated: true, completion: nil)
     }
     
     
