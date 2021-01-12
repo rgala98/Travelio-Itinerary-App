@@ -18,8 +18,8 @@ class AddDayViewController: UIViewController {
     @IBOutlet weak var cancelButton: ActionUIButton!
     @IBOutlet weak var saveButton: ActionUIButton!
     
-    var doneSaving: (() -> ())?
-    var tripIndexToEdit: Int?
+    var doneSaving: ((DayModel) -> ())?
+    var tripIndex: Int!
     
     
     
@@ -36,22 +36,17 @@ class AddDayViewController: UIViewController {
     }
     
     
-    @IBAction func addTrip(_ sender: UIButton) {
+    @IBAction func save(_ sender: UIButton) {
         
-        guard titleTextField.hasValue, let newTripName = titleTextField.text else {
-            return
-        }
+        guard titleTextField.hasValue, let newTitle = titleTextField.text else { return }
         
-//        if let index = tripIndexToEdit {
-//            TripFunctions.updateTrip(at: index, title: newTripName, image: tripImageView.image)
-//        }else {
-//            TripFunctions.createTrip(tripModel: TripModel(title: newTripName, image: tripImageView.image))
-//        }
+        let dayModel = DayModel(title: newTitle, subtitle: descTextField.text ?? "", data: nil)
         
+        DayFunctions.createDays(at: tripIndex, using: dayModel)
         
         
         if let doneSaving = doneSaving{
-            doneSaving()
+            doneSaving(dayModel)
         }
         dismiss(animated: true)
         

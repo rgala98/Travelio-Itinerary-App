@@ -45,7 +45,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
-                                            <action selector="addTrip:" destination="edL-XG-DBV" eventType="touchUpInside" id="j9N-PO-CUJ"/>
+                                            <action selector="save:" destination="edL-XG-DBV" eventType="touchUpInside" id="RjB-kK-3g0"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description (optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U9t-ee-xtR">

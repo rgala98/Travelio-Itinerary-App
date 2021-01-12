@@ -20,16 +20,7 @@ class ActivitiesViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        title = tripTitle
-        addButton.createActionFloatingButton()
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-        
+    fileprivate func updateTableViewWithTripData() {
         TripFunctions.readTrip(by: tripId) { [weak self] (model) in
             
             guard let self = self else {return}
@@ -41,6 +32,19 @@ class ActivitiesViewController: UIViewController {
             
             self.tableView.reloadData()
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        title = tripTitle
+        addButton.createActionFloatingButton()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        updateTableViewWithTripData()
         
         sectionHeaderHeight = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier)?.contentView.bounds.height ?? 0
     }
@@ -72,7 +76,19 @@ class ActivitiesViewController: UIViewController {
     
     
     func handleAddDay(action: UIAlertAction){
-        let vc  = AddDayViewController.getInstance()
+        let vc  = AddDayViewController.getInstance() as! AddDayViewController
+        vc.tripIndex = Data.tripModels.firstIndex(where: { (tripModel) -> Bool in
+            tripModel.id == tripId
+        })
+        vc.doneSaving = { [weak self] dayModel in
+            guard let self = self else {return}
+            
+            let indexArray = [self.tripModel?.dayModels.count ?? 0]
+            self.tripModel?.dayModels.append(dayModel)
+            
+            self.tableView.insertSections(IndexSet(indexArray), with: .automatic)
+//            self.updateTableViewWithTripData()
+        }
         present(vc, animated: true, completion: nil)
     }
     
