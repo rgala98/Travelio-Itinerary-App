@@ -21,6 +21,7 @@ class AddDayViewController: UIViewController {
     
     var doneSaving: ((DayModel) -> ())?
     var tripIndex: Int!
+    var tripModel: TripModel!
     
     
     
@@ -38,8 +39,14 @@ class AddDayViewController: UIViewController {
     
     
     @IBAction func save(_ sender: UIButton) {
-        
-//        guard titleTextField.hasValue, let newTitle = titleTextField.text else { return }
+    
+        if alreadyExists(datePicker.date) {
+            let alert = UIAlertController(title: "Day already exits", message: "Choose another date.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+            return
+        }
         
         let dayModel = DayModel(title: datePicker.date, subtitle: descTextField.text ?? "", data: nil)
         
@@ -56,6 +63,21 @@ class AddDayViewController: UIViewController {
     
     @IBAction func done(_ sender: UITextField) {
         sender.resignFirstResponder()
+    }
+    
+    func alreadyExists(_ date: Date) -> Bool{
+        
+//        if tripModel.dayModels.contains(where: { (dayModel) -> Bool in
+//            return dayModel.title == date
+//        }){
+//            return true
+//        }
+        
+        if tripModel.dayModels.contains(where: { $0.title.mediumDate == date.mediumDate }){
+            return true
+        }
+        
+        return false
     }
     
     

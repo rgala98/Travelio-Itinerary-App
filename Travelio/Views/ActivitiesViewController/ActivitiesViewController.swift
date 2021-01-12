@@ -77,6 +77,7 @@ class ActivitiesViewController: UIViewController {
     
     func handleAddDay(action: UIAlertAction){
         let vc  = AddDayViewController.getInstance() as! AddDayViewController
+        vc.tripModel = tripModel
         vc.tripIndex = Data.tripModels.firstIndex(where: { (tripModel) -> Bool in
             tripModel.id == tripId
         })
