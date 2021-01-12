@@ -9,7 +9,7 @@ import UIKit
 
 class DayFunctions{
     
-    static func createDays(at tripIndex: Int,using dayModel: DayModel){
+    static func createDay(at tripIndex: Int,using dayModel: DayModel){
         //Replace with real data store code
         Data.tripModels[tripIndex].dayModels.append(dayModel)
     }

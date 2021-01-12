@@ -50,7 +50,7 @@ class AddDayViewController: UIViewController {
         
         let dayModel = DayModel(title: datePicker.date, subtitle: descTextField.text ?? "", data: nil)
         
-        DayFunctions.createDays(at: tripIndex, using: dayModel)
+        DayFunctions.createDay(at: tripIndex, using: dayModel)
         
         
         if let doneSaving = doneSaving{

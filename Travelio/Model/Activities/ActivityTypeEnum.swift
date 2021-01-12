@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ActivityType {
+enum ActivityType: Int {
     case auto
     case excursion
     case flight
