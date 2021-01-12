@@ -42,6 +42,7 @@
 		2F470E3F25AD6C76008A9325 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F470E3E25AD6C76008A9325 /* UIViewControllerExtensions.swift */; };
 		2F470E4225AD6EB7008A9325 /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F470E4125AD6EB7008A9325 /* UITextFieldExtensions.swift */; };
 		2F470E4525AD7129008A9325 /* DayFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F470E4425AD7129008A9325 /* DayFunctions.swift */; };
+		2F470E4825AD8AD6008A9325 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F470E4725AD8AD6008A9325 /* DateExtensions.swift */; };
 		2F7B147325A47E5F00A45819 /* UITableViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B147225A47E5F00A45819 /* UITableViewCellExtensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		2F470E3E25AD6C76008A9325 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		2F470E4125AD6EB7008A9325 /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		2F470E4425AD7129008A9325 /* DayFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayFunctions.swift; sourceTree = "<group>"; };
+		2F470E4725AD8AD6008A9325 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		2F7B147225A47E5F00A45819 /* UITableViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,6 +227,7 @@
 				2F7B147225A47E5F00A45819 /* UITableViewCellExtensions.swift */,
 				2F470E3E25AD6C76008A9325 /* UIViewControllerExtensions.swift */,
 				2F470E4125AD6EB7008A9325 /* UITextFieldExtensions.swift */,
+				2F470E4725AD8AD6008A9325 /* DateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				2F470E4225AD6EB7008A9325 /* UITextFieldExtensions.swift in Sources */,
 				2F3DCAA525A045B6004B5804 /* TripsTableViewCell.swift in Sources */,
 				2F3DCA8A259F3681004B5804 /* TripModel.swift in Sources */,
+				2F470E4825AD8AD6008A9325 /* DateExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
