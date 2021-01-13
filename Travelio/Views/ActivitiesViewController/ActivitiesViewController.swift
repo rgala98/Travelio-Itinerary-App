@@ -78,7 +78,7 @@ class ActivitiesViewController: UIViewController {
     }
     
     
-    fileprivate func getTripIndex() -> Array<TripModel>.Index? {
+    fileprivate func getTripIndex() -> Int! {
         return Data.tripModels.firstIndex(where: { (tripModel) -> Bool in
             tripModel.id == tripId
         })
@@ -91,7 +91,7 @@ class ActivitiesViewController: UIViewController {
         vc.doneSaving = { [weak self] dayModel in
             guard let self = self else {return}
             
-
+            
             self.tripModel?.dayModels.append(dayModel)
             let indexArray = [self.tripModel?.dayModels.firstIndex(of: dayModel) ?? 0]
             
@@ -109,7 +109,7 @@ class ActivitiesViewController: UIViewController {
         vc.doneSaving = { [weak self] dayIndex, activityModel in
             guard let self = self else {return}
             
-
+            
             self.tripModel?.dayModels[dayIndex].activityModels.append(activityModel)
             
             let row = (self.tripModel?.dayModels[dayIndex].activityModels.count)! - 1
@@ -166,5 +166,45 @@ extension ActivitiesViewController: UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     
-
+    // MARK: Swipe Actions
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let activityModel = tripModel!.dayModels[indexPath.section].activityModels[indexPath.row]
+        
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (contextualAction, view,  actionPerformed: @escaping (Bool) -> ()) in
+            
+            // Ask before Delete
+            let alert = UIAlertController(title: "Delete Activity", message: "Are you sure you want to delete this activity: \(activityModel.title)?", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (alertAction) in
+                actionPerformed(false)
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (alertAction) in
+                // Perform Delete
+                
+                ActivityFunctions.deleteActivity(at: self.getTripIndex(), for: indexPath.section, using: activityModel)
+                self.tripModel!.dayModels[indexPath.section].activityModels.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                actionPerformed(true)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            
+        }
+        
+        delete.image = UIImage(named: "closeIcon")
+        delete.image?.withTintColor(UIColor.white)
+        
+        
+        return UISwipeActionsConfiguration(actions: [delete])
+        
+    }
+    
+    
 }
+
+

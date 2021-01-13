@@ -14,4 +14,14 @@ class  ActivityFunctions {
         Data.tripModels[tripIndex].dayModels[dayIndex].activityModels.append(activityModel)
     }
     
+    static func deleteActivity(at tripIndex: Int, for dayIndex: Int, using activityModel: ActivityModel){
+        //Replace with real data store code
+        
+        let dayModel = Data.tripModels[tripIndex].dayModels[dayIndex]
+        
+        if let index = dayModel.activityModels.firstIndex(of: activityModel){
+            Data.tripModels[tripIndex].dayModels[dayIndex].activityModels.remove(at: index)
+        }
+    }
+    
 }
