@@ -21,6 +21,8 @@ class TripsViewController: UIViewController  {
     var tripIndexToEdit: Int?
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,20 +30,7 @@ class TripsViewController: UIViewController  {
         tableView.delegate = self
         
         tableView.tableFooterView = UIView() 
-        
-        TripFunctions.readTrips { [unowned self] in
-            self .tableView.reloadData()
-            
-            if Data.tripModels.count > 0{
-                if !UserDefaults.standard.bool(forKey: self.seenHelpView){
-                    self.view.addSubview(self.helpView)
-                    self.helpView.frame = self.view.bounds
-                }
-            }
-            
-        }
-        
-        
+       
         
         view.backgroundColor = Theme.backgroundColor
         
@@ -59,8 +48,25 @@ class TripsViewController: UIViewController  {
             
             let yRotation = CATransform3DMakeRotation(CGFloat(30 * Double.pi/180), 0, 1, 0)
             self.logoImageView.layer.transform = CATransform3DConcat(self.logoImageView.layer.transform, yRotation)
+        } completion: { (success) in
+            self.getTripData()
         }
 
+    }
+    
+    
+    fileprivate func getTripData() {
+        TripFunctions.readTrips { [unowned self] in
+            self .tableView.reloadData()
+            
+            if Data.tripModels.count > 0{
+                if !UserDefaults.standard.bool(forKey: self.seenHelpView){
+                    self.view.addSubview(self.helpView)
+                    self.helpView.frame = self.view.bounds
+                }
+            }
+            
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
