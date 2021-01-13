@@ -124,6 +124,12 @@ class ActivitiesViewController: UIViewController {
     }
     
     
+    @IBAction func toggleEditMode(_ sender: UIBarButtonItem) {
+        tableView.isEditing.toggle()
+        sender.title = sender.title == "Edit" ? "Done" : "Edit"
+    }
+    
+    
 }
 
 // MARK: - Table View Delegates
@@ -165,6 +171,30 @@ extension ActivitiesViewController: UITableViewDataSource, UITableViewDelegate{
         cell.setup(model: model!)
         return cell
     }
+    
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        // Get current activity
+        let activityModel = (tripModel?.dayModels[sourceIndexPath.section].activityModels[sourceIndexPath.row])!
+        
+        // Delete the activity from old location
+        tripModel?.dayModels[sourceIndexPath.section].activityModels.remove(at: sourceIndexPath.row)
+        
+        // Insert the activity tto the new location
+        tripModel?.dayModels[destinationIndexPath.section].activityModels.insert(activityModel, at: destinationIndexPath.row)
+        
+        //Updating the database
+        
+        ActivityFunctions.reorderActivity(at: getTripIndex(), oldDayIndex: sourceIndexPath.section, newDayIndex: destinationIndexPath.section, newActivityIndex: destinationIndexPath.row, using: activityModel)
+    }
+    
+    
+    
     
     // MARK: Swipe Actions
     

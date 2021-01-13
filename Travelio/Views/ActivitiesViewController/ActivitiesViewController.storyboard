@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Activities View Controller-->
+        <!--Title-->
         <scene sceneID="qgl-v0-B79">
             <objects>
                 <viewController id="KE0-dr-MSK" customClass="ActivitiesViewController" customModule="Travelio" customModuleProvider="target" sceneMemberID="viewController">
@@ -162,7 +162,13 @@
                             <constraint firstItem="jl8-BI-oJy" firstAttribute="trailing" secondItem="fMQ-7M-e8I" secondAttribute="trailing" constant="20" id="xWB-AR-fNc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Z45-bM-y86"/>
+                    <navigationItem key="navigationItem" title="Title" id="yaq-x8-wHC">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" style="plain" id="9LY-FP-QQ3">
+                            <connections>
+                                <action selector="toggleEditMode:" destination="KE0-dr-MSK" id="6VG-rv-Ff3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="fMQ-7M-e8I" id="GOK-ao-AUk"/>
                         <outlet property="backgroundImageView" destination="eBj-jo-B5T" id="mIz-U5-0DM"/>
