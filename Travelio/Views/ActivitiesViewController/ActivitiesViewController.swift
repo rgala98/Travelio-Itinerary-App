@@ -205,6 +205,73 @@ extension ActivitiesViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        
+        let edit = UIContextualAction(style: .normal, title: "Edit") { (contextualAction, view, actionPerformed: @escaping(Bool) -> ()) in
+            
+            let vc = AddActivityViewController.getInstance() as! AddActivityViewController
+            vc.tripModel = self.tripModel
+            
+            // Which trip we are working with?
+            vc.tripIndex = self.getTripIndex()
+            
+            // Which Day we are on?
+            vc.dayIndexToEdit = indexPath.section
+            
+            // Which Activity we are editing?
+            vc.activityModelToEdit = self.tripModel?.dayModels[indexPath.section].activityModels[indexPath.row]
+            
+            // Update after activity is saved
+            vc.doneUpdating = { [weak self] oldDayIndex, newDayIndex, activityModel in
+                
+                guard let self = self else {return}
+                
+                let oldActivityIndex = (self.tripModel?.dayModels[oldDayIndex].activityModels.firstIndex(of: activityModel))!
+                
+                if oldDayIndex == newDayIndex {
+                    // Update the local table data
+                    self.tripModel?.dayModels[newDayIndex].activityModels[oldActivityIndex] = activityModel
+                    
+                    //refresh the row
+                    let indexPath = IndexPath(row: oldActivityIndex, section: newDayIndex)
+                    tableView.reloadRows(at: [indexPath], with: .automatic)
+                } else{
+                    // Activity was moved to a different day
+                    
+                    //Remove the activity from local table data
+                    self.tripModel?.dayModels[oldDayIndex].activityModels.remove(at: oldActivityIndex)
+                    
+                    //Insert activity into new location
+                    let lastIndex = (self.tripModel?.dayModels[newDayIndex].activityModels.count)!
+                    self.tripModel?.dayModels[newDayIndex].activityModels.insert(activityModel, at: lastIndex)
+                    
+                    // Update table rows
+                    tableView.performBatchUpdates {
+                        tableView.deleteRows(at: [indexPath], with: .automatic)
+                        let insertIndexPath = IndexPath(row: lastIndex, section: newDayIndex)
+                        tableView.insertRows(at: [insertIndexPath], with: .automatic)
+                    } 
+
+                }
+                
+            }
+            
+            
+            self.present(vc, animated: true, completion: nil)
+            actionPerformed(true)
+        }
+        
+        edit.image = UIImage(named: "editIcon")
+        edit.image?.withTintColor(UIColor.white)
+        edit.backgroundColor = UIColor.systemBlue
+        
+        
+        
+        return UISwipeActionsConfiguration(actions: [edit])
+    }
+    
+    
 }
 
 

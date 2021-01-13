@@ -125,6 +125,7 @@ class AddTripViewController: UIViewController {
                 alert.addAction(okAction)
                 self.present(alert, animated: true, completion: nil)
             @unknown default:
+                print("It looks like Apple added a new enum to PHAuthorizationStatus")
                 break
             }
             

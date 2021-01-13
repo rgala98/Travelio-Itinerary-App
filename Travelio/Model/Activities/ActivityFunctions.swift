@@ -24,4 +24,37 @@ class  ActivityFunctions {
         }
     }
     
+    
+    static func updateActivity(at tripIndex: Int, oldDayIndex: Int, newDayIndex: Int, using activityModel: ActivityModel){
+        //Replace with real data store code
+        
+        if oldDayIndex != newDayIndex{
+            // Move the activity to different day
+            let lastIndex = Data.tripModels[tripIndex].dayModels[newDayIndex].activityModels.count
+            reorderActivity(at: tripIndex, oldDayIndex: oldDayIndex, newDayIndex: newDayIndex, newActivityIndex: lastIndex, using: activityModel)
+        }else{
+            // Update activity in same Day
+            let dayModel = Data.tripModels[tripIndex].dayModels[oldDayIndex]
+            let activityIndex = (dayModel.activityModels.firstIndex(of: activityModel))!
+            Data.tripModels[tripIndex].dayModels[newDayIndex].activityModels[activityIndex] = activityModel
+        }
+    }
+    
+    
+    static func reorderActivity(at tripIndex: Int, oldDayIndex: Int, newDayIndex: Int, newActivityIndex: Int, using activityModel: ActivityModel){
+        //Replace with real data store code
+        
+        // Remove activity from old location
+        let oldDayModel = Data.tripModels[tripIndex].dayModels[oldDayIndex]
+        let oldActivityIndex = (oldDayModel.activityModels.firstIndex(of: activityModel))!
+        Data.tripModels[tripIndex].dayModels[oldDayIndex].activityModels.remove(at: oldActivityIndex)
+        
+        // Insert into new location
+        Data.tripModels[tripIndex].dayModels[newDayIndex].activityModels.insert(activityModel, at: newActivityIndex)
+        
+    }
+    
+    
+
+    
 }
