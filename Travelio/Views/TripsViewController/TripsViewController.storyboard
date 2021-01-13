@@ -65,6 +65,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logolaunch" translatesAutoresizingMaskIntoConstraints="NO" id="qkl-06-bu7">
+                                <rect key="frame" x="97" y="284" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="FMc-AJ-JZO"/>
+                                    <constraint firstAttribute="height" constant="240" id="wYa-Mv-e7N"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKT-Ff-Rfm">
                                 <rect key="frame" x="322" y="702" width="72" height="72"/>
                                 <constraints>
@@ -81,6 +88,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="E3Q-xe-RXe" secondAttribute="bottom" id="DW8-d9-NlB"/>
+                            <constraint firstItem="qkl-06-bu7" firstAttribute="centerX" secondItem="Ee6-eE-neC" secondAttribute="centerX" constant="10" id="G0t-sK-ZyR"/>
+                            <constraint firstItem="qkl-06-bu7" firstAttribute="centerY" secondItem="Ee6-eE-neC" secondAttribute="centerY" id="JdM-hy-de1"/>
                             <constraint firstItem="6U3-ue-p7x" firstAttribute="bottom" secondItem="rKT-Ff-Rfm" secondAttribute="bottom" id="K2Q-k7-wp2"/>
                             <constraint firstItem="E3Q-xe-RXe" firstAttribute="top" secondItem="6U3-ue-p7x" secondAttribute="top" id="Qa0-d3-JF4"/>
                             <constraint firstAttribute="trailing" secondItem="E3Q-xe-RXe" secondAttribute="trailing" id="XSn-xh-1nR"/>
@@ -92,6 +101,7 @@
                     <connections>
                         <outlet property="addTripButton" destination="rKT-Ff-Rfm" id="D2F-6O-N7R"/>
                         <outlet property="helpView" destination="tSJ-E3-SR9" id="8rc-Zo-w8v"/>
+                        <outlet property="logoImageView" destination="qkl-06-bu7" id="1zg-C0-2Fk"/>
                         <outlet property="tableView" destination="E3Q-xe-RXe" id="cGL-LR-dCk"/>
                     </connections>
                 </viewController>
@@ -183,6 +193,7 @@
         <image name="AddTripIcon" width="56" height="56"/>
         <image name="deleteSwipeAction" width="828" height="327"/>
         <image name="editSwipeAction" width="828" height="322"/>
+        <image name="logolaunch" width="762" height="802"/>
         <namedColor name="Tint">
             <color red="1" green="0.49803921568627452" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
